@@ -18,4 +18,6 @@ from . import views as file_store
 
 urlpatterns = [
     url(r'^$', file_store.home, name='home'),
+    url(r'^search/', file_store.search, name='search'),
+    url(r'^(\d+)$', file_store.file, name='file'),
 ]
