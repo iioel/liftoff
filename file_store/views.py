@@ -9,13 +9,9 @@ def home(request):
     return HttpResponse(text)
 
 def search(request):
-    text = """<h1>Page de recherche</h1>
-              <p>Ici, il sera possible de rechercher des fichiers"""
 
-    return HttpResponse(text)
+    return render(request, 'file/search.html')
 
 def file(request, id_fichier):
-    text = """<h1>Page de consultation de fichier</h1>
-              <p>Vous avez demandé le fichier {0}""".format(id_fichier)
 
-    return HttpResponse(text)
+    return render(request, 'file/file.html', {'id_fichier': id_fichier})
