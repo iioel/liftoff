@@ -12,6 +12,6 @@ def search(request):
 
     return render(request, 'file/search.html')
 
-def file(request, id_fichier):
+def file(request, file_id):
 
-    return render(request, 'file/file.html', {'id_fichier': id_fichier})
+    return render(request, 'file/file.html', {'file_id': file_id})
