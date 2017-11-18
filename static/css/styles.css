@@ -1,0 +1,52 @@
+.nav {
+  margin-left: 20%;
+}
+.nav > li {
+  display: block;
+  padding: 0px 0px;
+  cursor: pointer;
+}
+.nav > li:hover {
+  background: #ebebeb;
+}
+
+.drop {
+  position: relative;
+  text-decoration: none;
+  color: #a2a2a2;
+  transition: all 0.3s ease;
+}
+.drop:hover {
+    color: #222222;
+}
+.drop ul {
+  position: absolute;
+  padding-left: 0;
+  border-collapse: collapse;
+  left: 0;
+  top: 3em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  background: #ebebeb;
+}
+.drop ul li {
+  display: block;
+  width: 100%;
+  padding: 0px;
+}
+.drop ul li a {
+  width: 100%;
+  padding: 1em 18px;
+  display: block;
+  white-space: pre;
+  box-sizing: border-box;
+}
+.drop ul li a:hover {
+  background: #f3f3f3;
+
+

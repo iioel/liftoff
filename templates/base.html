@@ -4,7 +4,9 @@
 <head>
     <title>{% block title %}Liftoff - The ultimate Astronautic and Astronomic file reference{% endblock %}</title>
 
-    <link rel="stylesheet" href="/static/css/style.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -14,10 +16,10 @@
 <body>
     <nav>
         {% block nav %}
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/file/search/">Search</a></li>
-            <li><a href="/contact/">Contact</a></li>
+        <ul class="nav desktop">
+            <li class="drop"><a href="/">Home</a></li>
+            <li class="drop"><a href="/file/search/">Search</a></li>
+            <li class="drop"><a href="/contact/">Contact</a></li>
         </ul>
         {% endblock %}
     </nav>
