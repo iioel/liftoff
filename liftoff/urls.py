@@ -19,5 +19,4 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^file/', include('file_store.urls')),
-    url(r'^tags_input/', include('tags_input.urls', namespace='tags_input')),
 ]
