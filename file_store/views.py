@@ -1,17 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from file_store.models import File
 
 # Create your views here.
 
-def home(request):
-    text = """<h1>TEST Bienvenue ! :)</h1>"""
+files = File.objects.all()
 
-    return HttpResponse(text)
+def home(request):
+    #text = """<h1>TEST Bienvenue ! :)</h1>"""
+
+    #return HttpResponse(text)
+
+    return render(request, 'file/list.html', {'files': files})
 
 def search(request):
 
     return render(request, 'file/search.html')
 
-def file(request, file_id):
+def file(request):
 
-    return render(request, 'file/file.html', {'file_id': file_id})
+    return render(request, 'file/file.html')

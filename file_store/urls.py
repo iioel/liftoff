@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
-from . import views as file_store
+from . import views
 
 urlpatterns = [
-    url(r'^$', file_store.home, name='home'),
-    url(r'^search/', file_store.search, name='search'),
-    url(r'^(\d+)$', file_store.file, name='file'),
+    url(r'^$', views.home, name='home'),
+    url(r'^search/', views.search, name='search'),
+    #url(r'^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$', views.file, name='file'),
+    url(r'^/(?P<uuid>\[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12})/$', views.file, name='file'),
+    #url(r'^(?P<uuid>\[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12})$', views.file, name='file'),
 ]

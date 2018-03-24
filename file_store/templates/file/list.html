@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<h1>Liste des fichiers</h1>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for file in files %}
+        <a href="{{ request.get_host }}/file/{{ file.id }}">
+        <tr>
+            <td>
+                <a href="{{ file.id }}">{{ file.title }}</a>
+            </td>
+            <td>{{ file.date }}</td>
+            <td>{{ file.author }}</td>
+            <td>
+                <div class="container">
+                    {% for tag in file.tags.all %}
+                    <button class="btn btn-success">{{ tag.name }}</button>
+                    {% endfor %}
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
