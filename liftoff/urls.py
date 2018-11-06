@@ -18,8 +18,8 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^file/', include('file_store.urls')),
-    url(r'^contact/', views.contact, name='contact'),
+    url(r'^contact', views.contact, name='contact'),
     url(r'^$', views.home, name='home'),
 ]

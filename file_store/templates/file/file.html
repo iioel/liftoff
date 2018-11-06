@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-<h1>Page de consultation de fichier</h1>
-<p>Vous avez demandé le fichier avec l'id </p>
+    <h1>Page de consultation de fichier</h1>
+    <p>Vous avez demandé le fichier {{ file.title }}</p>
+    <div class="row">
+        <p class="align-middle col-lg-6">Taille : {{ size }}</p>
+        <a class="btn btn-lg btn-outline-success col-lg-6" href="{{ file.id }}/download" role="button">Download</a>
+    </div>
+    
 </div>
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+{% if user.is_authenticated %}
+    {% if success %}
+        <div class="alert alert-success" role="alert">
+            Added {{result.new}} new files to the total of {{result.old}} files
+        </div>
+    {% endif %}
+    <p>Here by clicking onto the "Scan" button, all new files in the directory will be indexed.<p>
+    <form action = "" method = "post">{% csrf_token %}
+        <button class="btn btn-primary" type="submit">Scan</button>
+    </form>
+{% else %}
+    <p>You must be logged-in to access this page</p>
+    <a class="btn btn-primary" href="google.com">Login</a>
+{% endif %}
+</div>
+{% endblock %}
